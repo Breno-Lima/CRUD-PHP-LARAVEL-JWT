@@ -73,7 +73,7 @@ composer update
 
 ```
 
-5.  Execute esse comando para que a chave JWT seja criada
+5.  Acredito que como commitei com o .env não seja necessária a criação de uma key para o JWT e outros alguns comandos que forneci.
 
 ```sh
 
