@@ -21,21 +21,6 @@ Route::middleware('api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-// Route::post('/login', function(Request $request) {
-//     $credentials = $request->only('email', 'password');
-//     if (!$token = auth()->attempt($credentials)) {
-//         return response()->json(['error' => 'Unauthorized'], 401);  
-//     } else {
-//         return response()->json([
-//             'data'=>[
-//                 'token' => $token,
-//                 'expires_in' => JWTFactory::getTTL() * 60,
-
-//             ]
-//         ]);
-//     }
-// });
-
 
 Route::get('/register', [AuthController::class, 'showRegistrationForm'])->name('api/register');
 Route::post('/register', [AuthController::class, 'register']);

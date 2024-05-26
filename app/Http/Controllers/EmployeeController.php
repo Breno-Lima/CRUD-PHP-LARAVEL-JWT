@@ -3,10 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\EmployeeFormRequest;
-use App\Models\Employee; // Alteração feita aqui
+use App\Models\Employee; 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
-use Carbon\Carbon;
 
 class EmployeeController extends Controller
 {
@@ -49,16 +48,15 @@ class EmployeeController extends Controller
     {
         $employee->delete();
 
-        return redirect()->route('employee.index') // Alteração feita aqui
-            ->with('mensagem.sucesso', "Funcionário '{$employee->nome}' removido com sucesso"); // Alteração feita aqui
+        return redirect()->route('employee.index') 
+            ->with('mensagem.sucesso', "Funcionário '{$employee->nome}' removido com sucesso"); 
     }
 
     public function edit(Employee $employee)
     {
         return view('employee.edit')->with('employee', $employee);
     }
-
-    
+   
     public function update(EmployeeFormRequest $request, $id)
     {
         $employee = Employee::findOrFail($id);
@@ -84,7 +82,6 @@ class EmployeeController extends Controller
             ->with('mensagem.sucesso', "Funcionário '{$employee->nome}' atualizado com sucesso");
     }
     
-  
     public function show(Employee $employee)
     {
         return view('employee.show', compact('employee'));

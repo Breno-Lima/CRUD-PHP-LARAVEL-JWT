@@ -23,8 +23,8 @@ class EmployeeFormRequest extends FormRequest
     public function rules()
     {
         return [
-            'nome' => ['required', 'min:2', 'regex:/^[^\d]+$/'], // Não permite números no nome
-            'nome_social' => ['required', 'string', 'min:2', 'regex:/^[^\d]+$/'], // Não permite números no nome social
+            'nome' => ['required', 'min:2', 'regex:/^[^\d]+$/'], 
+            'nome_social' => ['required', 'string', 'min:2', 'regex:/^[^\d]+$/'],
             'data_nascimento' => ['required'],
             'cpf' => ['required', 'string', 'size:14'], 
             'imagem' => ['sometimes', 'image', 'max:2048'],

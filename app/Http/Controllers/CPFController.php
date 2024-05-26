@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\CPF;
 
-
-
 class CPFController extends Controller
 {
     public function index(CPF $cpf)

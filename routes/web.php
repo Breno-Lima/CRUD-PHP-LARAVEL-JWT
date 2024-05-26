@@ -11,7 +11,6 @@ Route::get('/', function () {
 Route::resource('/employee', EmployeeController::class)
     ->parameters(['employee' => 'employee']);
 
-
 Route::get('/register', [AuthController::class, 'showRegistrationForm']);
 Route::post('api/register', [AuthController::class, 'register']);
 

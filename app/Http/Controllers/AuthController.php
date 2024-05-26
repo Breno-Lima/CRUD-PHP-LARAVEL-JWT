@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Tymon\JWTAuth\Facades\JWTAuth;
-
 class AuthController extends Controller
 {
     /**
@@ -31,7 +30,6 @@ class AuthController extends Controller
             'email' => $request->input('email'),
             'password' => Hash::make($request->input('password')),
         ]);
-        
 
         $token = JWTAuth::fromUser($user);
 
@@ -43,17 +41,12 @@ class AuthController extends Controller
         $credentials = $request->only('email', 'password');
     
         if (auth()->attempt($credentials)) {
-            // Autenticação foi bem-sucedida. Redirecionar para a rota desejada.
+          
             return redirect()->route('employee');
         }
     
-        // Autenticação falhou. Redirecionar de volta com erro.
         return back()->withErrors(['message' => 'Usuário ou senha inválidos']);
     }
-
-    
-
-
     
     public function showRegistrationForm()
     {

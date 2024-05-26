@@ -14,7 +14,7 @@
                 @if($employee->imagem)
                 <img src="{{ asset('storage/'.$employee->imagem) }}" alt="Imagem do funcionário" class="me-2 profile-image">
                 @else
-                <img src="{{ asset('storage/user.png') }}" alt="Imagem padrão" class="me-2 profile-image">                
+                <img src="{{ asset('storage/user.webp') }}" alt="Imagem padrão" class="me-2 profile-image">                
                 @endif
                 <a href="{{ route('employee.show', $employee->id) }}">{{ $employee->nome }}</a>
             </div>
